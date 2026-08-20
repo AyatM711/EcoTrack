@@ -1,5 +1,6 @@
 import json
 import os
+from waste_logging import log_waste_entry
 
 # File used to store waste records
 DATA_FILE = "waste_log.json"
@@ -116,8 +117,8 @@ def main():
         choice = get_menu_choice()
 
         if choice == 1:
-            print("\n♻️  Opening Waste Logging...")
-            print("Please wait for the waste logging module.\n")
+            log_waste_entry(waste_log)
+            save_data(waste_log)
 
             # Member 2's function will be connected here.
 
